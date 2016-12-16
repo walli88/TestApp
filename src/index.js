@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render, ReactDOM }  from 'react-dom';
 import axios from 'axios';
 import { fetchApi } from '../actions/index'
 import { connect, Provider } from 'react-redux'
@@ -8,6 +8,13 @@ import ReduxPromise from 'redux-promise'
 import reducers from '../reducers'
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
+
+render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>,
+  document.querySelector('.container')
+)
 
 class App extends Component {
   constructor(props) {
