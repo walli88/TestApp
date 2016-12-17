@@ -1,16 +1,10 @@
-import axios from 'axios'
+// import axios from 'axios'
 
-const ROOT_URL = `http://10.0.0.170:8080/walter`
+// const ROOT_URL = `http://localhost:8081/walter`
 
-export const FETCH_API = 'FETCH_API'
+// export const FETCH_API = 'FETCH_API'
 
-export function fetchApi () {
-
-  console.log("inside fetch api")
-  const request = axios.get(ROOT_URL)
-
-  return {
-    type: FETCH_API,
-    payload: request
-  }
-}
+export const fetchApi = (blah) => ({
+    type: "FETCH_API",
+    payload: "walter" + blah
+})

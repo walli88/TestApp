@@ -1,10 +1,16 @@
 import { connect } from 'react-redux'
+import { fetchApi } from '../actions'
+import ChatView from '../components/ChatView'
 
+const mapStateToProps = (state) => ({
+  result: state.reducerApi
+})
 
-const mapStateToProps = ({ result }) {
-  return { result } // weather: weather
-}
+const mapDispatchToProps = (dispatch) => ({
+  onFetch: (blah) => {
+    dispatch(fetchApi(blah))
+  }
+})
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(fetchApi, dispatch)
-}
+const Chat = connect(mapStateToProps, mapDispatchToProps)(ChatView)
+export default Chat

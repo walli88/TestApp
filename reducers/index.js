@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import ApiReducer from './reducer_api'
+import reducerApi from './reducerApi'
 
 const rootReducer = combineReducers({
-  result: ApiReducer
+  reducerApi
 })
 
 export default rootReducer

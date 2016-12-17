@@ -1,9 +1,9 @@
 import React from 'react'
-import ChatView from './Chatview'
+import Chat from '../containers/Chat'
 
 const App = () => (
   <div>
-    <ChatView />
+    <Chat />
   </div>
 )
 
